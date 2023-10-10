@@ -61,7 +61,7 @@ private_key_file = "/etc/chainflip/keys/ethereum_key_file"
 ws_endpoint = "WSS_ENDPOINT_OF_ETHEREUM_RPC"
 http_endpoint = "HTTPS_ENDPOINT_OF_ETHEREUM_RPC"
 
-#optional
+# Optional
 # [eth.backup_rpc]
 # ws_endpoint = "SECOND_WSS_ENDPOINT_OF_ETHEREUM_RPC"
 # http_endpoint = "SECOND_HTTPS_ENDPOINT_OF_ETHEREUM_RPC"
@@ -70,6 +70,7 @@ http_endpoint = "HTTPS_ENDPOINT_OF_ETHEREUM_RPC"
 ws_endpoint = "wss://rpc-pdot.chainflip.io:443"
 http_endpoint = "https://rpc-pdot.chainflip.io:443"
 
+# Optional
 # [dot.backup_rpc]
 # ws_endpoint = "wss://rpc-pdot2.chainflip.io:443"
 # http_endpoint = "https://rpc-pdot2.chainflip.io:443"`
@@ -79,6 +80,7 @@ http_endpoint = "http://a108a82b574a640359e360cf66afd45d-424380952.eu-central-1.
 rpc_user = "flip"
 rpc_password = "flip"
 
+# Optional
 # [btc.backup_rpc]
 # http_endpoint = "http://second-node-424380952.eu-central-1.elb.amazonaws.com"
 # rpc_user = "flip2"
@@ -87,6 +89,10 @@ rpc_password = "flip"
 [signing]
 db_file = "/etc/chainflip/data.db"
 
+# Optional (default: 36079)
+# [logging]
+# command_server_port = 36079
+
 ```
 
 ## Pointing to the Ethereum Client
@@ -94,7 +100,7 @@ db_file = "/etc/chainflip/data.db"
 If you followed the instructions in [Prerequisites](prerequisites.md), you will probably have an account with an Ethereum RPC provider (Alchemy, Infura, Rivet, etc.). You must change the `ws_endpoint` and `http_endpoint` in the above file to RPC URLs given to you by these services. You must have both a Websocket (wss) and HTTPS connection in order for the software to function.
 
 <Callout type="warning">
-  **Important:** Make sure that you are not using a mainnet RPC, this will not
+  **Important:** Make sure that you are **not** using a mainnet RPC, this will not
   work!
 </Callout>
 
